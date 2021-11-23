@@ -1,0 +1,64 @@
+<div class="page page--wide">
+  {{#if parentItem.stories}}
+    <a 
+      class="story__back-button" 
+      href="/{{pageAuthor.details.username}}"
+    >Back</a>
+  {{else}}
+    <a 
+      class="story__back-button" 
+      href="/{{pageAuthor.details.username}}/story/{{parentItem.id}}"
+    >Back</a>
+  {{/if}}
+  <div 
+    class="story"
+    object
+    key:id="{{currentItem.id}}"
+  >
+    {{#if parentItem.stories}}
+      <h2 class="page__heading">In the beginning...</h2>
+    {{else}}
+      <h2 class="page__heading-label">You decided to...</h2>
+      <div class="page__heading page__heading--small">{{currentItem.choiceText}}</div>
+    {{/if}}
+    <div
+      class="story__content"
+      object
+      key:content="@innerText"
+      edit:content:textarea
+    >{{currentItem.content}}</div>
+    {{#or currentUser currentItem.choices.length}}
+      <div class="story__choices-heading">What next?</div>
+    {{else}}
+      <div class="story__choices-heading">The End!</div>
+    {{/or}}
+    <div 
+      class="story__choices-list"
+      key="choices"
+      array
+    >
+      {{#for choice in currentItem.choices}}
+        <div 
+          class="story__choice"
+          object
+          key:id="{{choice.id}}"
+          key:choice-text="@search"
+        >
+          <a 
+            target:choice-text
+            class="story__choice-link" 
+            href="/{{@root.pageAuthor.details.username}}/story/{{choice.id}}"
+          >{{choice.choiceText}}</a>
+          <button 
+            class="story__choice-edit-button"
+            edit:choice-text
+          >Edit</button>
+        </div>
+      {{/for}}
+    </div>
+    <button 
+      class="button button--grape story__choice-new-button"
+      new:choice
+    >Add choice</button>
+  </div>
+</div>

@@ -3,25 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kanban App</title>
+  <title>Storiess - Interactive Storytelling</title>
   <link rel="shortcut icon" type="image/png" href="/assets/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/css/_remake.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/base.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/accounts.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/flash.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/site-nav.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/text-field.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/front-page.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/kanban.css">
 </head>
 <body>
   <div class="container">
     <div class="nav">
-      <a class="logo" href="{{#if currentUser}}/{{currentUser.details.username}}{{else}}/{{/if}}">
-        <img class="logo__image" src="/assets/images/logo.svg">
-        <span class="logo__text">TaskFellow <span class="logo__version">v1.0</span></span>
-      </a>
       {{#if currentUser}}
         <div class="nav__user">
           <div>{{currentUser.details.username}}</div>
