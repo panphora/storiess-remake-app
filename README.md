@@ -15,12 +15,16 @@ Now you have an interactive story!
 ```bash
 # clone the repo
 git clone https://github.com/panphora/storiess-remake-app.git
+
 # switch into the directory
 cd storiess-remake-app
+
 # install dependencies
 npm install
+
 # create a .remake file with some basic options
 echo -e '{\n  "port": 3000,\n  "sessionSecret": "Vw8bqAxeeqerwerweE2D1EXPyJMdik"\n}' >> .remake
+
 # start the app
 npm run dev
 ```
