@@ -23,7 +23,10 @@ cd storiess-remake-app
 npm install
 
 # create a .remake file with some basic options
-echo -e '{\n  "port": 3000,\n  "sessionSecret": "Vw8bqAxeeqerwerweE2D1EXPyJMdik"\n}' >> .remake
+# - sets default port
+# - sets session secret (can be anything)
+# - makes remake generate unique ids for every object in the database (See: https://docs.remaketheweb.com/nested-pages/)
+echo -e '{\n  "port": 3000,\n  "sessionSecret": "Vw8bqAxeeqerwerweE2D1EXPyJMdik",\n  "generateUniqueIds": true\n}' >> .remake
 
 # start the app
 npm run dev
